@@ -1,6 +1,9 @@
+from math import log
+from pickle import load, dump
+from os.path import exists
+
 
 def value_of_mk()->int:
-    from math import log
     # get masterkey
     masterkey = ""
     flag_masterkey = False
@@ -42,15 +45,12 @@ def value_of_mk()->int:
 
 
 def leer_archivo(file)-> tuple:
-    from pickle import load
     tple = load(file)
 
     return tuple(tple)
 
 
 def abrir_archivo(dir_file: str, mode: str):
-    from os.path import exists
-
     # format directory and file result
     if dir_file[-1] == '\\':
         dir_file += "case.ecy"
@@ -67,7 +67,6 @@ def abrir_archivo(dir_file: str, mode: str):
 
 
 def get_rute()-> str:
-    from os.path import exists
     dir = 0
     while True:
         dir = input("Ingrese la Ruta del archivo ecy: ")
@@ -78,7 +77,6 @@ def get_rute()-> str:
 
 
 def salvar_archivo(file, obj):
-    from pickle import dump
     dump(obj, file)
 
     return
